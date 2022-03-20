@@ -13,6 +13,7 @@ namespace Smartwyre.DeveloperTest.Runner
         private static IObjectFactory ObjectFactory { get; set; }
 
         /// <summary>
+        /// Run program with {path to exe} {DebtorAccountNumber} {Amount}
         /// args[0] = <see cref="MakePaymentRequest.DebtorAccountNumber"/>
         /// args[1] = <see cref="MakePaymentRequest.Amount"/>
         /// </summary>
@@ -20,7 +21,7 @@ namespace Smartwyre.DeveloperTest.Runner
         /// <exception cref="InvalidOperationException"></exception>
         public static int Main(string[] args)
         {
-            ObjectFactory = IoC.ObjectFactory.Initialise();
+            ObjectFactory = IoC.ObjectFactory.Instance;
 
             MakePaymentRequest request = ParseArgs(args);
 

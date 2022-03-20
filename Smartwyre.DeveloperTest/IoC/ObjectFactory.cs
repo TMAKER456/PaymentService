@@ -4,8 +4,7 @@ namespace Smartwyre.DeveloperTest.IoC
 {
     public class ObjectFactory : IObjectFactory
     {
-        private static IObjectFactory singletonInstance;
-        public static IObjectFactory Initialise() => singletonInstance ??= new ObjectFactory();
+        public static IObjectFactory Instance { get; } = new ObjectFactory();
 
         internal IContainer Container { get; }
 

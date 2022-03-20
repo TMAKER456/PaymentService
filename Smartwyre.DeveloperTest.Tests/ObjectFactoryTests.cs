@@ -10,7 +10,7 @@ namespace Smartwyre.DeveloperTest.Tests
         [Fact]
         public void ObjectFactoryReturnsObjects()
         {
-            var objectFactory = ObjectFactory.Initialise();
+            var objectFactory = ObjectFactory.Instance;
 
             var dataStore = objectFactory.GetInstance<IAccountDataStore>();
             var paymentService = objectFactory.GetInstance<IPaymentService>();
